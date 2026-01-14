@@ -43,7 +43,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
                         initial={{ opacity: 0, scale: 0.95, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                        className="relative z-10 w-full max-w-md bg-black border border-white p-6 shadow-2xl"
+                        className="relative z-10 w-full max-w-md bg-black border border-white p-6 shadow-2xl max-h-[85vh] overflow-y-auto"
                     >
                         <div className="flex items-center justify-between mb-6">
                             <h2 className="text-xl font-bold uppercase tracking-wider text-white border-b-2 border-white pb-1">{title}</h2>
