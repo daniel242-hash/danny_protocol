@@ -36,18 +36,20 @@ export function StakingDashboard() {
                     <div className="text-xs text-gray-400 uppercase mb-1">Staked Balance</div>
                     <div className="text-xl font-mono text-white">{stakedBalance}</div>
                 </div>
-                <div className="bg-white/5 p-3 border border-white/10 relative">
-                    <div className="text-xs text-gray-400 uppercase mb-1">Earned Rewards</div>
+                <div className="bg-white/5 p-3 border border-white/10">
+                    <div className="flex justify-between items-start mb-1">
+                        <div className="text-xs text-gray-400 uppercase">Earned Rewards</div>
+                        {parseFloat(rewards) > 0 && (
+                            <button
+                                onClick={claim}
+                                disabled={!isConnected}
+                                className={`text-[10px] uppercase border border-white px-2 py-0.5 transition-colors ${isConnected ? 'hover:bg-white hover:text-black' : 'opacity-50 cursor-not-allowed'}`}
+                            >
+                                Claim
+                            </button>
+                        )}
+                    </div>
                     <div className="text-xl font-mono text-white">{rewards}</div>
-                    {parseFloat(rewards) > 0 && (
-                        <button
-                            onClick={claim}
-                            disabled={!isConnected}
-                            className={`absolute top-2 right-2 text-[10px] uppercase border border-white px-2 py-0.5 transition-colors ${isConnected ? 'hover:bg-white hover:text-black' : 'opacity-50 cursor-not-allowed'}`}
-                        >
-                            Claim
-                        </button>
-                    )}
                 </div>
             </div>
 
